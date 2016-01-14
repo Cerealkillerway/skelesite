@@ -1,3 +1,13 @@
 <template name="skelesiteMenu">
-    semplice menu
+    {{#each items}}
+        <li>
+            <a href="/{{currentLang}}/{{langAttribute this 'code' 'it'}}">
+                {{#if langAttribute this 'menuName' 'it'}}
+                    <div class="navItemName">{{langAttribute this 'menuName' 'it'}}</div>
+                {{else}}
+                    <div class="navItemName">{{langAttribute this 'code' 'it'}}</div>
+                {{/if}}
+            </a>
+        </li>
+    {{/each}}
 </template>

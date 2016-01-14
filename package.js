@@ -43,7 +43,7 @@ Package.onUse(function(api) {
     
 
     // templates
-    
+    api.addFiles('templates/menu/menu.html', 'client');
     
 
     // i18n
@@ -52,7 +52,10 @@ Package.onUse(function(api) {
 
 
     // libraries
-    
+    api.addFiles('lib/publish.js', 'server');
+    api.addFiles('lib/collections.js');
+    api.addFiles('events/menuEvents.js', 'client');
+    api.addFiles('helpers/menuHelpers.js', 'client');
     
 });
 
