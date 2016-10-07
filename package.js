@@ -11,8 +11,6 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-    api.versionsFrom('1.2.1');
-
     // namespace
     api.addFiles('namespace.js');
 
@@ -33,18 +31,18 @@ Package.onUse(function(api) {
     api.use('cerealkiller:utils@1.0.0');
     // need skeleform, but allow it to be loaded last
     api.use('cerealkiller:skeletor@0.0.3', {weak: true});
-    
+
 
     // exports
     api.export('Skelesite');   // package namespace
 
     // styles
-    
-    
+
+
 
     // templates
     api.addFiles('templates/menu/menu.html', 'client');
-    
+
 
     // i18n
     api.addFiles('i18n/it.i18n.json');
@@ -56,7 +54,7 @@ Package.onUse(function(api) {
     api.addFiles('lib/collections.js');
     api.addFiles('events/menuEvents.js', 'client');
     api.addFiles('helpers/menuHelpers.js', 'client');
-    
+
 });
 
 Package.onTest(function(api) {
