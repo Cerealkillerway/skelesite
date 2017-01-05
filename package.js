@@ -1,6 +1,6 @@
 Package.describe({
     name: 'cerealkiller:skelesite',
-    version: '0.0.1',
+    version: '0.0.2',
     // Brief, one-line summary of the package.
     summary: 'skeletor frontend helpers',
     // URL to the Git repository containing the source code for this package.
@@ -27,7 +27,6 @@ Package.onUse(function(api) {
     api.use('fourseven:scss@3.2.0', 'client');
     api.use('tap:i18n@1.7.0');
     api.use('momentjs:moment@2.10.6');
-    api.use('materialize:materialize@=0.97.7', 'client');
     api.use('cerealkiller:skeleutils@1.0.0');
     // if skeletor is in use, load it before
     api.use('cerealkiller:skeletor@0.0.3', {weak: true});
