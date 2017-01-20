@@ -18,6 +18,7 @@ Package.onUse(function(api) {
     api.use('mongo');
     api.use('session');
     api.use('jquery', 'client');
+    api.use('ecmascript');
     api.use('blaze-html-templates', 'client');
     api.use('underscore@1.0.0');
     api.use('kadira:flow-router@2.8.0');
