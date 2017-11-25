@@ -1,6 +1,6 @@
 Package.describe({
     name: 'cerealkiller:skelesite',
-    version: '0.0.2',
+    version: '0.0.3',
     summary: 'skeletor frontend helpers',
     // URL to the Git repository containing the source code for this package.
     git: '',
@@ -16,7 +16,7 @@ Package.onUse(function(api) {
         'jquery',
         'blaze-html-templates',
         'kadira:blaze-layout@2.2.0',
-        'fourseven:scss@3.2.0'
+        'fourseven:scss'
     ],
     ['client']);
 
@@ -25,9 +25,9 @@ Package.onUse(function(api) {
         'session',
         'ecmascript',
         'underscore@1.0.0',
-        'kadira:flow-router@2.8.0',
+        'staringatlights:flow-router@2.8.0',
         'meteorhacks:subs-manager@1.6.2',
-        'meteorhacks:fast-render@2.10.0',
+        'staringatlights:fast-render@2.10.0',
         'momentjs:moment@2.10.6',
         'cerealkiller:skeleutils',
         'cerealkiller:skeletor'
