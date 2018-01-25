@@ -35,13 +35,19 @@ Package.onUse(function(api) {
     ['client', 'server']);
 
     // templates
-    api.addFiles(['templates/menu/menu.html'], ['client']);
+    api.addFiles([
+        'templates/menu/menu.html',
+        'templates/pageDefault.html'
+    ],
+    ['client']);
 
     // libraries
     api.addFiles(['lib/publish.js'], ['server']);
 
     api.addFiles([
         'events/menuEvents.js',
+        'events/pageDefaultEvents.js',
+        'helpers/pageDefaultHelpers.js',
         'helpers/menuHelpers.js'
     ],
     ['client']);

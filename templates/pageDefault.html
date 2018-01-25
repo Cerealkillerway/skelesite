@@ -1,0 +1,18 @@
+<template name="pageDefault">
+    <div class="centralBody">
+        <div class="panel">
+            {{#if isDataReady data}}
+                {{#if (getCurrentLangData data.item "published")}}
+                    {{{getCurrentLangData data.item "title"}}}
+
+                    {{{getCurrentLangData data.item "content"}}}
+                {{else}}
+                    {{{_ "unpublished_error"}}}
+                {{/if}}
+            {{else}}
+                <!-- form loading modal -->
+                {{> gearContent data.schema}}
+            {{/if}}
+        </div>
+    </div>
+</template>
