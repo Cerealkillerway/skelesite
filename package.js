@@ -1,6 +1,6 @@
 Package.describe({
     name: 'cerealkiller:skelesite',
-    version: '0.0.3',
+    version: '1.0.0',
     summary: 'skeletor frontend helpers',
     // URL to the Git repository containing the source code for this package.
     git: '',
