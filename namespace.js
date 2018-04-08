@@ -1,1 +1,3 @@
 Skelesite = {};
+
+Skeletor.Skelesite = Skelesite;

@@ -1,0 +1,26 @@
+<template name="skelesitePagePlaceholder">
+    {{#if data.skeleSubsReady}}
+        {{#if data.items}}
+            {{#each item in data.items}}
+
+                {{!-- put a separator line if this is not the first item in the set --}}
+                {{#if @index}}
+                    <div class="skelesitePlaceholderSeparator"></div>
+                {{/if}}
+
+                {{#if (getCurrentLangData item "published")}}
+                    {{#if (getCurrentLangData item "title")}}
+                        {{{getCurrentLangData item "title"}}}
+                        <br />
+                    {{/if}}
+
+                    {{{getCurrentLangData item 'content'}}}
+                {{else}}
+                    {{{_ "unpublished_error"}}}
+                {{/if}}
+            {{/each}}
+        {{/if}}
+    {{else}}
+        LOADING...
+    {{/if}}
+</template>

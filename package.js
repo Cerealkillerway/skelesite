@@ -39,22 +39,36 @@ Package.onUse(function(api) {
     // templates
     api.addFiles([
         'templates/menu/menu.html',
-        'templates/pageDefault.html'
+        'templates/pageDefault.html',
+        'templates/pagePlaceholder.html'
     ],
     ['client']);
 
     // libraries
     api.addFiles(['lib/publish.js'], ['server']);
 
+    // event and helpers
     api.addFiles([
         'events/menuEvents.js',
         'events/pageDefaultEvents.js',
+        'events/pagePlaceholderEvents.js',
+
         'helpers/pageDefaultHelpers.js',
-        'helpers/menuHelpers.js'
+        'helpers/menuHelpers.js',
+        'helpers/pagePlaceholderHelpers.js'
     ],
     ['client']);
 
-    api.addFiles(['lib/collections.js'], ['client', 'server']);
+    api.addFiles([
+        'lib/collections.js'
+    ],
+    ['client', 'server']);
+
+    // styles
+    api.addFiles([
+        'styles/skelesite.scss'
+    ],
+    ['client']);
 
 
     // exports
