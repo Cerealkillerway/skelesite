@@ -9,12 +9,16 @@
                 {{/if}}
 
                 {{#if (getCurrentLangData item "published")}}
-                    {{#if (getCurrentLangData item "title")}}
-                        {{{getCurrentLangData item "title"}}}
-                        <br />
-                    {{/if}}
+                    {{#unless data.contentOnly}}
+                        {{#if (getCurrentLangData item "title")}}
+                            {{{getCurrentLangData item "title"}}}
+                            <br />
+                        {{/if}}
+                    {{/unless}}
 
-                    {{{getCurrentLangData item 'content'}}}
+                    {{#unless data.titleOnly}}
+                        {{{getCurrentLangData item 'content'}}}
+                    {{/unless}}
                 {{else}}
                     {{{_ "unpublished_error"}}}
                 {{/if}}
