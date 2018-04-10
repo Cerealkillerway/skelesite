@@ -10,13 +10,13 @@
                 {{#if (getCurrentLangData item "published")}}
                     {{#unless data.contentOnly}}
                         {{#if (getCurrentLangData item "title")}}
-                            {{{renderWithHelpers(getCurrentLangData item "title")}}}
+                            {{{getCurrentLangData item "title"}}}
                             <br />
                         {{/if}}
                     {{/unless}}
 
                     {{#unless data.titleOnly}}
-                        {{{renderWithHelpers(getCurrentLangData item 'content')}}}
+                        {{{getCurrentLangData item 'content'}}}
                     {{/unless}}
                 {{else}}
                     {{{_ "unpublished_error"}}}
