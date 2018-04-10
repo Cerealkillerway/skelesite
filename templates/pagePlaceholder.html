@@ -2,8 +2,7 @@
     {{#if data.skeleSubsReady}}
         {{#if data.items}}
             {{#each item in data.items}}
-
-                {{!-- put a separator line if this is not the first item in the set --}}
+                {{! put a separator line if this is not the first item in the set }}
                 {{#if @index}}
                     <div class="skelesitePlaceholderSeparator"></div>
                 {{/if}}
@@ -11,13 +10,13 @@
                 {{#if (getCurrentLangData item "published")}}
                     {{#unless data.contentOnly}}
                         {{#if (getCurrentLangData item "title")}}
-                            {{{getCurrentLangData item "title"}}}
+                            {{{renderWithHelpers(getCurrentLangData item "title")}}}
                             <br />
                         {{/if}}
                     {{/unless}}
 
                     {{#unless data.titleOnly}}
-                        {{{getCurrentLangData item 'content'}}}
+                        {{{renderWithHelpers(getCurrentLangData item 'content')}}}
                     {{/unless}}
                 {{else}}
                     {{{_ "unpublished_error"}}}
