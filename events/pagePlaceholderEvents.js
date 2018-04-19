@@ -18,7 +18,7 @@ Template.skelesitePagePlaceholder.onCreated(function() {
         pageOptions.fields[currentLang + '---content'] = 1;
         pageOptions.fields[currentLang + '---published'] = 1;
 
-        let page = Meteor.subscribe('findDocuments', 'Pages', pageQuery, pageOptions);
+        let page = Skeletor.subsManagers.pagesSubs.subscribe('findDocuments', 'Pages', pageQuery, pageOptions);
 
         // set reactive var for all subscriptions ready
         this.skeleSubsReady.set(page.ready());

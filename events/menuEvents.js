@@ -1,19 +1,16 @@
 Template.skelesiteMenu.onCreated(function() {
-    var self = this;
-    var data = self.data;
-    var menuQuery = {};
-        menuQuery[data.menuNameLang + '.code'] = data.menuName;
-    
-    // subscribe for the current menu record
-    var menuSubscription = Skeletor.subman.subscribe('findDocuments', 'Menus', menuQuery, {}, true);
+    this.skeleSubsReady = new ReactiveVar(false);
+    // subscribe data
+    let menuName = this.data.menuName;
 
-    // when menu record is ready, subscribe for pages associated with that menu
-    self.autorun(function() {
-        if (menuSubscription.ready()) {
-            var menuRecord = Skeletor.Data.Menus.findOne(menuQuery);
+    // here we use Meteor.subscribe instead of using subsManagers because
+    // the subsmanagers are resetted on logout; that means that when a user
+    // logs out, the content of the menu is lost
+    let menu = Meteor.subscribe('findDocuments', 'Menus', {name: menuName}, {});
+    let menuItems = Meteor.subscribe('findMenuItems', menuName);
 
-            self.menuId = menuRecord._id;
-            Skeletor.subman.subscribe("findMenuItems", menuRecord._id, FlowRouter.getParam('itemLang'));
-        }
-    });
+    this.skeleSubsReady.set(
+        menu.ready() &&
+        menuItems.ready()
+    );
 });

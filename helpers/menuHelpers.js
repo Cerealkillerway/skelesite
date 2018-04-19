@@ -1,20 +1,29 @@
 Template.skelesiteMenu.helpers({
-    items: function() {
-        var data = Template.instance().data;
-        var currentLang = FlowRouter.getParam('itemLang');
-        var listQuery = {
-            menu: data.menuId
-        };
-        var listOptions = {
-            fields: {},
-            sort: {}
-        };
+    data: function() {
+        const instance = Template.instance();
+        let context = {};
+        let currentLang = FlowRouter.getParam('itemLang');
+        let menuName = instance.data.menuName;
+        let menu = Skeletor.Data.Menus.findOne({name: menuName});
 
-        listOptions.fields[currentLang + '.code'] = 1;
-        listOptions.fields[currentLang + '.title'] = 1;
-        listOptions.fields[currentLang + '.menuName'] = 1;
+        if (menu) {
+            let menuId = menu._id;
+            let pagesQuery = {};
+            let pagesOptions = {
+                fields: {}
+            };
 
-        var list = Skelesite.Data.Pages__menuList__.find({}, listOptions);
-        return list;
+            pagesQuery.menu = menuId;
+            pagesOptions.fields[currentLang + '---code'] = 1;
+            pagesOptions.fields[currentLang + '---menuName'] = 1;
+
+            context.items = Skeletor.Data.Pages.find(pagesQuery, pagesOptions);
+        }
+
+        context.skeleSubsReady = instance.skeleSubsReady;
+        context.titleOnly = instance.data.titleOnly;
+        context.contentOnly = instance.data.contentOnly;
+
+        return context;
     }
 });
