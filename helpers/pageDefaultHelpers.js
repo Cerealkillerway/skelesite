@@ -1,4 +1,5 @@
-import {} from 'meteor/cerealkiller:skeletor';
+import {} from 'meteor/cerealkiller:skeletor'; 
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
 
 Template.pageDefault.helpers({

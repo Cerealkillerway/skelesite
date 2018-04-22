@@ -17,7 +17,6 @@ Package.onUse(function(api) {
     api.use([
         'jquery',
         'blaze-html-templates@1.1.2',
-        'kadira:blaze-layout@2.2.0',
         'fourseven:scss@4.5.4'
     ],
     ['client']);
@@ -27,9 +26,9 @@ Package.onUse(function(api) {
         'session',
         'ecmascript',
         'underscore@1.0.0',
-        'staringatlights:flow-router@2.8.0',
+        'ostrio:flow-router-extra@3.4.7',
         'meteorhacks:subs-manager@1.6.2',
-        'staringatlights:fast-render@2.10.0',
+        'staringatlights:fast-render@3.0.3',
         'momentjs:moment@2.10.6',
         'cerealkiller:skeleutils',
         'cerealkiller:skeletor'

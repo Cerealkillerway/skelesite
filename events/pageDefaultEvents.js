@@ -1,3 +1,6 @@
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+
+
 Template.pageDefault.onCreated(function() {
     this.skeleSubsReady = new ReactiveVar(false);
     // subscribe data
