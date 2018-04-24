@@ -19,6 +19,7 @@ Template.skelesiteMenu.helpers({
             pagesQuery.menu = menuId;
             pagesOptions.fields[currentLang + '---code'] = 1;
             pagesOptions.fields[currentLang + '---menuName'] = 1;
+            pagesOptions.fields[currentLang + '---menuIcon'] = 1;
 
             context.items = Skeletor.Data.Pages.find(pagesQuery, pagesOptions);
         }

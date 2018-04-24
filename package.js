@@ -9,7 +9,7 @@ Package.describe({
 
 Package.onUse(function(api) {
     // namespace
-    api.addFiles(['namespace.js'], ['client', 'server']);
+    api.mainModule('namespace.js');
 
     api.versionsFrom('METEOR@1.6.1');
 

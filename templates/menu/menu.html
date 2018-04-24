@@ -1,8 +1,11 @@
 <template name="skelesiteMenu">
-    {{#each data.items}}
+    {{#each item in data.items}}
         <li>
-            <a href="/{{currentLang}}/{{getCurrentLangData this 'code'}}">
-                {{getCurrentLangData this 'menuName'}}
+            <a href="/{{currentLang}}/{{getCurrentLangData item 'code'}}">
+                {{#if (getCurrentLangData item 'menuIcon')}}
+                    <i class="material-icons small left">{{getCurrentLangData item 'menuIcon'}}</i>
+                {{/if}}
+                {{getCurrentLangData item 'menuName'}}
             </a>
         </li>
     {{/each}}
