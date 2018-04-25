@@ -25,8 +25,6 @@ Template.skelesiteMenu.helpers({
         }
 
         context.skeleSubsReady = instance.skeleSubsReady;
-        context.titleOnly = instance.data.titleOnly;
-        context.contentOnly = instance.data.contentOnly;
 
         return context;
     }
