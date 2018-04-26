@@ -1,9 +1,9 @@
-  ___________          .__                .__  __          
- /   _____/  | __ ____ |  |   ____   _____|__|/  |_  ____  
- \_____  \|  |/ // __ \|  | _/ __ \ /  ___/  \   __\/ __ \
- /        \    <\  ___/|  |_\  ___/ \___ \|  ||  | \  ___/
-/_______  /__|_ \\___  >____/\___  >____  >__||__|  \___  >
-        \/     \/    \/          \/     \/              \/
+      ___________          .__                .__  __          
+     /   _____/  | __ ____ |  |   ____   _____|__|/  |_  ____  
+     \_____  \|  |/ // __ \|  | _/ __ \ /  ___/  \   __\/ __ \
+     /        \    <\  ___/|  |_\  ___/ \___ \|  ||  | \  ___/
+    /_______  /__|_ \\___  >____/\___  >____  >__||__|  \___  >
+            \/     \/    \/          \/     \/              \/
 
 
 v1.0.0
@@ -29,3 +29,27 @@ inside the template the placeholder is placed with:
 - **name**: *[string] (required)* the name of the placeholder that will be rendered here (page(s) assigned to it will rendere here);
 - **contentOnly": *[boolean] (optional)* tells to the component to render only the content of assigned page(s);
 - **titleOnly": *[boolean] (optional)* tells to the component to render only the title of assigned page(s);
+
+
+#### MENU
+
+In the **Skeletor page form** every page can be assigned to a specific menu, defining the label for its own menu item and other options like an icon.
+The menu component generates a list of menu items, linking to the route to display that specific page;
+it provides a set of `<li>` elements, not the a complete structure for a menu layout;
+
+usage example:
+
+    <nav class="grey" role="navigation">
+        <div class="nav-wrapper container">
+            <ul class="left hide-on-med-and-down">
+                {{> skelesiteMenu menuName="main-menu"}}
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse">
+                <i class="material-icons white-text">menu</i>
+            </a>
+        </div>
+    </nav>
+
+##### MENU OPTIONS
+
+- **menuName**: *[string] (required)* the name of the menu to use; must match the name of a menu document in the control panel; all published pages associated to that menu will be inserted in the list as menu items;

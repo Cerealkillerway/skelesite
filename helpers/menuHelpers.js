@@ -17,6 +17,7 @@ Template.skelesiteMenu.helpers({
             };
 
             pagesQuery.menu = menuId;
+            pagesQuery[currentLang + '---published'] = true;
             pagesOptions.fields[currentLang + '---code'] = 1;
             pagesOptions.fields[currentLang + '---menuName'] = 1;
             pagesOptions.fields[currentLang + '---menuIcon'] = 1;

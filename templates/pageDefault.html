@@ -1,7 +1,7 @@
 <template name="pageDefault">
     <div class="centralBody">
         <div class="panel">
-            {{#if isDataReady data}}
+            {{#if skeleIsDataReady data}}
                 {{#if (getCurrentLangData data.item "published")}}
                     {{{getCurrentLangData data.item "title"}}}
 

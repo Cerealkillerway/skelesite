@@ -12,9 +12,9 @@ Template.pageDefault.onCreated(function() {
 
         pageQuery[currentLang + '---code'] = code;
 
-        let currentPage = Skeletor.subsManagers.settingsSubs.subscribe('findDocuments', 'Pages', pageQuery, {});
+        let currentPage = Skeletor.persistentSubsManagers.settingsSubs.subscribe('findDocuments', 'Pages', pageQuery, {});
 
         // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(Skeletor.subsManagers.settingsSubs.ready());
+        this.skeleSubsReady.set(Skeletor.persistentSubsManagers.settingsSubs.ready());
     });
 });

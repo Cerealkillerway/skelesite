@@ -1,5 +1,5 @@
 <template name="skelesitePagePlaceholder">
-    {{#if data.skeleSubsReady}}
+    {{#if skeleIsDataReady data}}
         {{#if data.items}}
             {{#each item in data.items}}
                 {{! put a separator line if this is not the first item in the set }}
@@ -24,6 +24,8 @@
             {{/each}}
         {{/if}}
     {{else}}
-        LOADING...
+        {{#if this.preloader}}
+            {{> gearContent this}}
+        {{/if}}
     {{/if}}
 </template>
