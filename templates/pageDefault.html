@@ -1,18 +1,29 @@
-<template name="pageDefault">
+<template name="skelePageDefault">
     <div class="centralBody">
         <div class="panel">
-            {{#if skeleIsDataReady data}}
-                {{#if (getCurrentLangData data.item "published")}}
-                    {{{getCurrentLangData data.item "title"}}}
+            <div class="container">
+                {{#if skeleIsDataReady data}}
+                    {{#if (getCurrentLangData data.item "published")}}
+                        {{#with (getCurrentLangData data.item "title")}}
+                            {{{this}}}
+                        {{/with}}
 
-                    {{{getCurrentLangData data.item "content"}}}
+                        {{#with (getCurrentLangData data.item "content")}}
+                            {{> skeleContentWithPlugins data=this}}
+                        {{/with}}
+                    {{else}}
+                        {{{i18n "unpublished_error"}}}
+                    {{/if}}
                 {{else}}
-                    {{{i18n "unpublished_error"}}}
+                    <!-- form loading modal -->
+                    {{> gearContent data.schema}}
                 {{/if}}
-            {{else}}
-                <!-- form loading modal -->
-                {{> gearContent data.schema}}
-            {{/if}}
+            </div>
         </div>
     </div>
+</template>
+
+
+<template name="skeleContentWithPlugins">
+    {{{data}}}
 </template>
