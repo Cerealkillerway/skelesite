@@ -39,7 +39,8 @@ Package.onUse(function(api) {
     api.addFiles([
         'templates/menu/menu.html',
         'templates/pageDefault.html',
-        'templates/pagePlaceholder.html'
+        'templates/pagePlaceholder.html',
+        'templates/langBar.html'
     ],
     ['client']);
 
@@ -51,10 +52,12 @@ Package.onUse(function(api) {
         'events/menuEvents.js',
         'events/pageDefaultEvents.js',
         'events/pagePlaceholderEvents.js',
+        'events/langBar.js',
 
         'helpers/pageDefaultHelpers.js',
         'helpers/menuHelpers.js',
-        'helpers/pagePlaceholderHelpers.js'
+        'helpers/pagePlaceholderHelpers.js',
+        'helpers/langBar.js'
     ],
     ['client']);
 

@@ -13,7 +13,12 @@ Template.skelesiteMenu.helpers({
             let menuId = menu._id;
             let pagesQuery = {};
             let pagesOptions = {
-                fields: {}
+                fields: {
+                    menuOrder: 1
+                },
+                sort: {
+                    menuOrder: 1
+                }
             };
 
             pagesQuery.menu = menuId;

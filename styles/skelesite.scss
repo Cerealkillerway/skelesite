@@ -1,3 +1,30 @@
+@import "{}/client/styles/siteColors";
+
+
 .skelesitePlaceholderSeparator {
     height: 25px;
+}
+
+.skelesiteLangs {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    right: 0;
+
+    .langFlag {
+        float: left;
+        margin: 3px 4px;
+
+        img {
+            max-height: 30px;
+            border: solid 3px darken($firstSiteColor, 10%);
+            cursor: pointer !important;
+        }
+
+        &.active {
+            img {
+                border-color: $firstSiteColorLink;
+            }
+        }
+    }
 }

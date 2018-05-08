@@ -5,7 +5,6 @@ Template.skelesiteMenu.onCreated(function() {
     this.skeleSubsReady = new ReactiveVar(false);
     // subscribe data
     let menuName = this.data.menuName;
-    console.log(menuName);
 
     this.autorun(() => {
         let currentLang = FlowRouter.getParam('itemLang');
