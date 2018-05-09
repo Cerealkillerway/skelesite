@@ -28,7 +28,5 @@ Template.skelePageDefault.onCreated(function() {
 
 
 Template.skeleContentWithPlugins.onRendered(function() {
-    console.log(this.$('.materialboxed'));
-
     this.$('.materialboxed').materialbox();
 });
