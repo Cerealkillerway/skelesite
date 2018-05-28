@@ -1,9 +1,11 @@
 <template name="skelesiteLangBar">
-    <div class="skelesiteLangs">
-        {{#each langs}}
-            <div class="langFlag {{isActive this}}" data-lang="{{this}}">
-                <img src="{{skeleStaticPath}}/images/icons/lang/{{this}}.jpg">
-            </div>
-        {{/each}}
-    </div>
+    {{#if (conf "enableFrontEndLangbar")}}
+        <div class="skelesiteLangs">
+            {{#each langs}}
+                <div class="langFlag {{isActive this}}" data-lang="{{this}}">
+                    <img src="{{skeleStaticPath}}/images/icons/lang/{{this}}.jpg">
+                </div>
+            {{/each}}
+        </div>
+    {{/if}}
 </template>
