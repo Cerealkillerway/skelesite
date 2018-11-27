@@ -61,10 +61,10 @@ Package.onUse(function(api) {
     ],
     ['client']);
 
-    api.addFiles([
-        'lib/collections.js'
+    /*api.addFiles([
+
     ],
-    ['client', 'server']);
+    ['client', 'server']);*/
 
     // styles
     api.addFiles([
