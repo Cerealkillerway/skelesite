@@ -11,7 +11,7 @@ Package.onUse(function(api) {
     // namespace
     api.mainModule('namespace.js');
 
-    api.versionsFrom('METEOR@1.6.1');
+    api.versionsFrom('METEOR@1.8.0.2');
 
     // dependencies
     api.use([
@@ -30,7 +30,6 @@ Package.onUse(function(api) {
         'meteorhacks:subs-manager@1.6.2',
         'staringatlights:fast-render@3.0.3',
         'momentjs:moment@2.10.6',
-        'cerealkiller:skeleutils',
         'cerealkiller:skeletor'
     ],
     ['client', 'server']);
