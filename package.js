@@ -9,7 +9,7 @@ Package.describe({
 
 Package.onUse(function(api) {
     // namespace
-    api.mainModule('namespace.js');
+    api.addFiles(['namespace.js'], ['client', 'server']);
 
     api.versionsFrom('METEOR@1.8.0.2');
 
@@ -39,12 +39,22 @@ Package.onUse(function(api) {
         'templates/menu/menu.html',
         'templates/pageDefault.html',
         'templates/pagePlaceholder.html',
-        'templates/langBar.html'
+        'templates/langBar.html',
+
+        'templates/panel/menus/menu-create.html',
+        'templates/panel/menus/menus-list.html',
+        'templates/panel/pages/page-create.html',
+        'templates/panel/pages/pages-list.html',
+        'templates/panel/sections/section-create.html',
+        'templates/panel/sections/sections-list.html'
     ],
     ['client']);
 
     // libraries
-    api.addFiles(['lib/publish.js'], ['server']);
+    api.addFiles([
+        'lib/publish.js'
+    ],
+    ['server']);
 
     // event and helpers
     api.addFiles([
@@ -52,18 +62,24 @@ Package.onUse(function(api) {
         'events/pageDefaultEvents.js',
         'events/pagePlaceholderEvents.js',
         'events/langBar.js',
+        'events/panel-events.js',
 
         'helpers/pageDefaultHelpers.js',
         'helpers/menuHelpers.js',
         'helpers/pagePlaceholderHelpers.js',
-        'helpers/langBar.js'
+        'helpers/langBar.js',
+        'helpers/panel-helpers.js'
     ],
     ['client']);
 
-    /*api.addFiles([
+    api.addFiles([
+        'lib/collections/menus.js',
+        'lib/collections/sections.js',
+        'lib/collections/pages.js',
 
+        'lib/auth-match.js'
     ],
-    ['client', 'server']);*/
+    ['client', 'server']);
 
     // styles
     api.addFiles([
